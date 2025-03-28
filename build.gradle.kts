@@ -52,6 +52,7 @@ repositories {
     mavenCentral()
     gradlePluginPortal()
     maven(wpilibLocal())
+    maven(frcMaven())
 }
 
 //
@@ -112,6 +113,8 @@ dependencies {
     wpi.java.deps.wpilibJniRelease(desktop).forEach(::nativeRelease)
     wpi.java.vendor.jniRelease(desktop).forEach(::nativeRelease)
     wpi.sim.enableRelease().forEach(::simulationRelease)
+
+    implementation("edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:2025.3.1")
 }
 
 //
@@ -167,3 +170,5 @@ fun wpilibLocal(): URI {
     val publicRoot = getPublicRoot()
     return Path(publicRoot, "wpilib", year, "maven").toUri()
 }
+
+fun frcMaven() = URI.create("https://frcmaven.wpi.edu/artifactory/release")
