@@ -92,7 +92,7 @@ class RobotEntrypoint : TimedRobot() {
     // Helpers
     //
 
-    fun runScheduler() = CommandScheduler.getInstance().run()
-    fun cancelAllCommands() = CommandScheduler.getInstance().cancelAll()
+    private fun runScheduler() = CommandScheduler.getInstance().run()
+    private fun cancelAllCommands() = CommandScheduler.getInstance().cancelAll()
 
 }
